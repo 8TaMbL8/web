@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <title>Рено Автомобили</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        max-width: 800px;
+        & img {
+          display: block;
+          margin: 0 auto;
+          width: 350px;
+          height: auto;
+        }
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      caption {
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      td:nth-child(even) {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/pages/index.html" class="logo">
+        <img src="/images/logo.jpeg" />
+        <span class="logo-text">Renault Auto</span>
+      </a>
+      <nav>
+        <ul class="navigation">
+          <li class="search-container">
+            <input
+              type="text"
+              placeholder="Что-то ищете?"
+              class="search-input"
+            />
+            <button class="search-button">Поиск</button>
+          </li>
+          <li><a href="/pages/login.html">Войти</a></li>
+          <li><a href="/pages/register.html">Регистрация</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <aside>
+        <nav>
+          <ul style="display: flex; flex-direction: column">
+            <li><a href="#services">Услуги</a></li>
+            <li
+              style="
+                background-color: black;
+                color: white;
+                padding-right: 10px;
+                text-align: right;
+              "
+            >
+              Каталог
+            </li>
+            <li><a href="/pages/contactus.html">Контакты</a></li>
+            <li><a href="/pages/aboutus.html">О нашей компании</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section>
+        <table border="1" align="center">
+          <caption>
+            Перед вами предоставлен весь модельный ряд автомобилей Renault
+          </caption>
+          <tr>
+            <td colspan="2">
+              <figure>
+                <figcaption>Zoe</figcaption>
+                <img src="/Cars/zoe.png" alt="Zoe" />
+              </figure>
+            </td>
+            <td colspan="2">
+              <figure>
+                <figcaption>Arkana</figcaption>
+                <img src="/Cars/arkana.png" alt="Arkana" />
+              </figure>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <figure>
+                <figcaption>Captur</figcaption>
+                <img src="/Cars/captur.png" alt="Captur" />
+              </figure>
+            </td>
+            <td colspan="2">
+              <figure>
+                <figcaption>Clio</figcaption>
+                <img src="/Cars/clio.png" alt="Clio" />
+              </figure>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <figure>
+                <figcaption>New Capture</figcaption>
+                <img src="/Cars/new capture.png" alt="New Capture" />
+              </figure>
+            </td>
+            <td colspan="2">
+              <figure>
+                <figcaption>New Clio</figcaption>
+                <img src="/Cars/new clio.png" alt="New Clio" />
+              </figure>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <figure>
+                <figcaption>Renault 5</figcaption>
+                <img src="/Cars/renault 5.png" alt="Renault 5" />
+              </figure>
+            </td>
+            <td colspan="2">
+              <figure>
+                <figcaption>Symbioz</figcaption>
+                <img src="/Cars/Symbioz.png" alt="Symbioz" />
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Рено Автомобили. Все права защищены.</p>
+    </footer>
+  </body>
+</html>
