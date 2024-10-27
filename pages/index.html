@@ -3,50 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <title>Рено Автомобили</title>
+    <link rel="icon" href="../images/logo.jpeg" type="image/png" />
+    <script src="../scripts/main.js"></script>
+    <script defer>
+      function performSearch(event) {
+        event.preventDefault();
+        const query = document.querySelector(".search-input").value;
+        window.location.href = `result.html?search=${encodeURIComponent(
+          query
+        )}`;
+      }
+      async function load() {
+        console.log("load");
+        const res = await fetch("http://localhost:3000/cars");
+        const cars = (await res.json()).cars;
+        console.log(cars);
+        const carsDiv = document.getElementById("cars");
+        cars.forEach((car) => {
+          const carElement = document.createElement("div");
+          carElement.textContent = `${car.name} - ${car.image_url}`;
+
+          carsDiv.appendChild(carElement);
+        });
+      }
+      load();
+    </script>
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <img src="/images/logo.jpeg" />
-        <h1>Renault Auto</h1>
-      </div>
-      <nav>
-        <ul class="navigation">
-          <li class="search-container">
-            <input
-              type="text"
-              placeholder="Что-то ищете?"
-              class="search-input"
-            />
-            <button class="search-button">Поиск</button>
-          </li>
-          <li><a href="/pages/login.html">Войти</a></li>
-          <li><a href="/pages/register.html">Регистрация</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div id="header"></div>
 
     <main>
       <aside>
         <nav>
           <ul>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="/pages/catalog.html">Каталог</a></li>
-            <li><a href="/pages/contactus.html">Контакты</a></li>
-            <li><a href="/pages/aboutus.html">О нашей компании</a></li>
+            <li><a href="../pages/servises.html">Услуги</a></li>
+            <li><a href="../pages/catalog.html">Каталог</a></li>
+            <li><a href="../pages/contactus.html">Контакты</a></li>
+            <li><a href="../pages/aboutus.html">О нашей компании</a></li>
           </ul>
         </nav>
       </aside>
 
       <section>
+        <div id="cars"></div>
+
         <div class="content-wrapper">
           <h1>Официальный дилер Рено в Москве - Major Renault</h1>
 
           <div class="image-container">
             <img
-              src="/images/logo_on_car.jpeg"
+              src="../images/logo_on_car.jpeg"
               alt="Логотип на автомобиле"
               class="image-placeholder"
             />
@@ -105,9 +113,6 @@
         </div>
       </section>
     </main>
-
-    <footer>
-      <p>&copy; 2024 Рено Автомобили. Все права защищены.</p>
-    </footer>
+    <div id="footer"></div>
   </body>
 </html>

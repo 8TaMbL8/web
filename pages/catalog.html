@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
     <title>Рено Автомобили</title>
+    <link rel="icon" href="../images/logo.jpeg" type="image/png" />
+    <script src="../scripts/main.js"></script>
+
     <style>
       table {
         border-collapse: collapse;
@@ -15,9 +18,17 @@
           margin: 0 auto;
           width: 350px;
           height: auto;
+          transition: transform 0.3s ease; /* Плавный переход для увеличения */
+        }
+        & img:hover {
+          transform: scale(1.2); /* Увеличение при наведении */
         }
       }
-
+      section p {
+        text-align: center;
+        padding-bottom: 20px;
+        font-size: 30px;
+      }
       th,
       td {
         padding: 10px;
@@ -41,34 +52,24 @@
         background-color: #f0f0f0;
       }
     </style>
+    <script>
+      function performSearch(event) {
+        event.preventDefault();
+        const query = document.querySelector(".search-input").value;
+        window.location.href = `result.html?search=${encodeURIComponent(
+          query
+        )}`;
+      }
+    </script>
   </head>
   <body>
-    <header>
-      <a href="/pages/index.html" class="logo">
-        <img src="/images/logo.jpeg" />
-        <span class="logo-text">Renault Auto</span>
-      </a>
-      <nav>
-        <ul class="navigation">
-          <li class="search-container">
-            <input
-              type="text"
-              placeholder="Что-то ищете?"
-              class="search-input"
-            />
-            <button class="search-button">Поиск</button>
-          </li>
-          <li><a href="/pages/login.html">Войти</a></li>
-          <li><a href="/pages/register.html">Регистрация</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div id="header"></div>
 
     <main>
       <aside>
         <nav>
           <ul>
-            <li><a href="#services">Услуги</a></li>
+            <li><a href="../pages/servises.html">Услуги</a></li>
             <li
               style="
                 background-color: black;
@@ -86,10 +87,8 @@
       </aside>
 
       <section>
+        <p>Модельный ряд автомобилей Renault</p>
         <table border="1" align="center">
-          <caption>
-            Перед вами предоставлен весь модельный ряд автомобилей Renault
-          </caption>
           <tr>
             <td colspan="2">
               <figure>
@@ -150,8 +149,6 @@
       </section>
     </main>
 
-    <footer>
-      <p>&copy; 2024 Рено Автомобили. Все права защищены.</p>
-    </footer>
+    <div id="footer"></div>
   </body>
 </html>

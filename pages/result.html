@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <title>Результаты поиска</title>
+    <link rel="icon" href="../images/logo.jpeg" type="image/png" />
+    <script src="../scripts/main.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .result-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+    <script>
+      function getQueryParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <main>
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="../pages/servises.html">Услуги</a></li>
+            <li><a href="/pages/catalog.html">Каталог</a></li>
+            <li><a href="/pages/contactus.html">Контакты</a></li>
+            <li><a href="/pages/aboutus.html">О нашей компании</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <section>
+        <div class="result-container">
+          <h1>Результаты поиска</h1>
+          <p>Вы искали: <span id="search-query"></span></p>
+        </div>
+        <script>
+          document.getElementById("search-query").textContent =
+            getQueryParameter("search");
+        </script>
+      </section>
+    </main>
+
+    <div id="footer"></div>
+  </body>
+</html>

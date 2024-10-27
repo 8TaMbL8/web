@@ -4,36 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="/css/styles.css" />
-    <title>Рено Автомобили</title>
+    <link rel="icon" href="../images/logo.jpeg" type="image/png" />
 
+    <title>Рено Автомобили</title>
+    <script src="../scripts/main.js"></script>
+
+    <script>
+      function performSearch(event) {
+        event.preventDefault();
+        const query = document.querySelector(".search-input").value;
+        window.location.href = `result.html?search=${encodeURIComponent(
+          query
+        )}`;
+      }
+    </script>
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <img src="/images/logo.jpeg" />
-        <a href="/pages/index.html"><h1>Renault Auto</h1></a>
-      </div>
-      <nav>
-        <ul class="navigation">
-          <li class="search-container">
-            <input
-              type="text"
-              placeholder="Что-то ищете?"
-              class="search-input"
-            />
-            <button class="search-button">Поиск</button>
-          </li>
-          <li><a href="/pages/login.html">Войти</a></li>
-          <li><a href="/pages/register.html">Регистрация</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div id="header"></div>
 
     <main>
       <aside>
         <nav>
           <ul>
-            <li><a href="#services">Услуги</a></li>
+            <li><a href="../pages/servises.html">Услуги</a></li>
             <li><a href="/pages/catalog.html">Каталог</a></li>
 
             <li
@@ -41,7 +34,7 @@
                 background-color: black;
                 color: white;
                 padding-right: 10px;
-                padding-left: 110px;
+                text-align: right;
               "
             >
               Контакты
@@ -74,11 +67,11 @@
             style="position: relative"
           ></iframe>
         </div>
+        <br />
+        Также вы можете связатья с нами, перейдя на форму по
+        <a class="toform" href="/pages/mail.html">ссылке</a>
       </section>
     </main>
-
-    <footer>
-      <p>&copy; 2024 Рено Автомобили. Все права защищены.</p>
-    </footer>
+    <div id="footer"></div>
   </body>
 </html>

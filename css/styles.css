@@ -88,6 +88,8 @@ aside {
   hyphens: auto;
   background-color: #fff;
   padding: 15px;
+  border-radius: 15px;
+
   & a {
     color: #000;
   }
@@ -117,6 +119,7 @@ aside {
 section {
   background-color: #eaeaea;
   padding: 20px;
+  border-radius: 15px;
 }
 
 footer {
@@ -131,7 +134,7 @@ footer {
   height: 70px;
 }
 img {
-  width: 150px;
+  width: 80px;
   height: auto;
 }
 .logo {
@@ -241,8 +244,24 @@ footer {
 }
 
 @font-face {
-  font-family: 'Andale Mono';
+  font-family: "Andale Mono";
   font-style: normal;
   font-weight: normal;
-  src: local('Andale Mono'), url('../assets/fonts/ANDALEMO.woff') format('woff');
-  }
+  src: local("Andale Mono"), url("../assets/fonts/ANDALEMO.woff") format("woff");
+}
+
+.toform {
+  text-decoration: none; /* Убираем подчеркивание */
+  color: black; /* Цвет текста */
+  background-color: #f4f4f4; /* Цвет фона */
+  padding: 5px 15px; /* Отступы */
+  border: 2px solid #000; /* Рамка */
+  border-radius: 5px; /* Скругление углов */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Плавный переход */
+  font-weight: bold; /* Жирный шрифт */
+}
+
+.toform:hover {
+  background-color: #000; /* Цвет фона при наведении */
+  transform: scale(1.05); /* Увеличение при наведении */
+}
