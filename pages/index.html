@@ -17,6 +17,7 @@
       }
       async function load() {
         console.log("load");
+
         const res = await fetch("http://localhost:3000/cars");
         const cars = (await res.json()).cars;
         console.log(cars);
@@ -24,7 +25,10 @@
         cars.forEach((car) => {
           const carElement = document.createElement("div");
           carElement.textContent = `${car.name} - ${car.image_url}`;
-
+          // add image to carElement
+          const image = document.createElement("img");
+          image.src = car.image_url;
+          carElement.appendChild(image);
           carsDiv.appendChild(carElement);
         });
       }
